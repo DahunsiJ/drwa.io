@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram id="secure-devsecops" name="Page-1">
+    <mxGraphModel dx="1033" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1"
+      fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- GitHub Actions -->
+        <mxCell id="github-actions" value="GitHub Actions (CI/CD)" style="rounded=1;fillColor=#D9EAD3;strokeColor=#6AA84F;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Security Scanning -->
+        <mxCell id="security-scanning" value="Security Scanning" style="rounded=1;fillColor=#F3F3F3;strokeColor=#6D9EEB;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="50" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Code Scanning -->
+        <mxCell id="codeql" value="CodeQL (Static Code Analysis)" style="rounded=1;fillColor=#FFF2CC;strokeColor=#FFD966;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="130" width="160" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Policy Scanning -->
+        <mxCell id="conftest" value="Conftest (Policy Enforcement)" style="rounded=1;fillColor=#FFF2CC;strokeColor=#FFD966;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="180" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Image Scanning -->
+        <mxCell id="trivy" value="Trivy (Image Scanning)" style="rounded=1;fillColor=#FFF2CC;strokeColor=#FFD966;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="230" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Build -->
+        <mxCell id="docker-build" value="Docker Build & Push" style="rounded=1;fillColor=#EAD1DC;strokeColor=#C27BA0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="450" y="130" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Kubernetes Deployment -->
+        <mxCell id="kubernetes" value="Kubernetes Deployment (Minikube)" style="rounded=1;fillColor=#D9EAD3;strokeColor=#6AA84F;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="650" y="130" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Security Layers -->
+        <mxCell id="security-layers" value="Security Layers" style="rounded=1;fillColor=#F3F3F3;strokeColor=#6D9EEB;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="650" y="230" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- RBAC -->
+        <mxCell id="rbac" value="RBAC (Least Privilege Access)" style="rounded=1;fillColor=#FFF2CC;strokeColor=#FFD966;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="310" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Network Policies -->
+        <mxCell id="network-policies" value="Network Policies (Restrict Traffic)" style="rounded=1;fillColor=#FFF2CC;strokeColor=#FFD966;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="360" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- kube-bench -->
+        <mxCell id="kube-bench" value="Kube-bench (Security Auditing)" style="rounded=1;fillColor=#FFF2CC;strokeColor=#FFD966;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="650" y="410" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows (Flow) -->
+        <mxCell id="arrow1" style="edgeStyle=elbowEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#000000;" edge="1" parent="1" source="github-actions" target="security-scanning">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow2" style="edgeStyle=elbowEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#000000;" edge="1" parent="1" source="security-scanning" target="docker-build">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow3" style="edgeStyle=elbowEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#000000;" edge="1" parent="1" source="docker-build" target="kubernetes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow4" style="edgeStyle=elbowEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#000000;" edge="1" parent="1" source="kubernetes" target="security-layers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
